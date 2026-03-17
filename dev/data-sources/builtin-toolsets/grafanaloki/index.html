@@ -96,30 +96,21 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-              <button class="md-banner__button md-icon" aria-label="Don't show this again">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-              </button>
-            
-            
-<div class="md-banner">
-  <div class="md-banner__inner">
-    📅 <a href="https://docs.google.com/document/d/1q3L2iUd8tNu-NmZ6QIVOJcCLHrile9CC5QguOGTn_tg/edit?tab=t.0#heading=h.ihdnrt5bstrv">Join our next community meetup!</a>
-  </div>
-</div>
-
-          </div>
-          
-            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
-          
-        </aside>
-      
     </div>
     
       <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're viewing docs for a <strong>previous version</strong>.
+  <a href="../../../..">
+    <strong>Switch to the latest stable release.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
         
       </div>
     
@@ -244,6 +235,45 @@
 </div>
       
     
+    <a href="https://docs.google.com/document/d/1q3L2iUd8tNu-NmZ6QIVOJcCLHrile9CC5QguOGTn_tg/edit?tab=t.0#heading=h.ihdnrt5bstrv" id="meetup-countdown" class="md-header__meetup" title="Community meetup">
+    </a>
+    <script>
+      (function() {
+        // Meetings are every 4 weeks (28 days) on Thursdays
+        // Known dates: Jan 15, Feb 12, Mar 12 2026
+        var ANCHOR = new Date(2026, 2, 12); // Mar 12, 2026 (month is 0-indexed)
+        var CYCLE = 28; // days
+
+        function update() {
+          var now = new Date();
+          var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+          // Calculate days since anchor, find next occurrence
+          var diff = Math.floor((today - ANCHOR) / (1000 * 60 * 60 * 24));
+          var remainder = ((diff % CYCLE) + CYCLE) % CYCLE; // handle dates before anchor too
+          var daysUntil = remainder === 0 ? 0 : CYCLE - remainder;
+
+          var el = document.getElementById("meetup-countdown");
+          if (!el) return;
+
+          var text;
+          if (daysUntil === 0) {
+            text = "Community meetup today!";
+          } else if (daysUntil === 1) {
+            text = "1 day until community meetup";
+          } else {
+            text = daysUntil + " days until community meetup";
+          }
+          el.textContent = text;
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", update);
+        } else {
+          update();
+        }
+      })();
+    </script>
     
       <div class="md-header__source">
         <a href="https://github.com/HolmesGPT/holmesgpt" title="Go to repository" class="md-source" data-md-component="source">
@@ -337,6 +367,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../why-holmesgpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why HolmesGPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -364,10 +421,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -385,8 +442,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -656,7 +713,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -678,14 +735,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -847,7 +904,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -869,14 +926,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1082,7 +1139,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1104,14 +1161,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1519,6 +1576,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1527,7 +1588,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1549,14 +1610,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1566,6 +1627,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recommended-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1669,6 +1758,8 @@
       
         
       
+        
+      
     
     
     
@@ -1677,7 +1768,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1699,14 +1790,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2723,6 +2814,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mongodb-atlas/" class="md-nav__link">
         
   
@@ -3123,14 +3242,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../custom-toolsets/" class="md-nav__link">
+      <a href="../../api-toolsets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Custom Toolsets
+    HTTP Connectors
   
 
     
@@ -3151,14 +3270,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-toolsets/" class="md-nav__link">
+      <a href="../../database-connectors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    HTTP Connectors
+    Database Connectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-toolsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Toolsets
   
 
     
@@ -3207,14 +3354,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../permissions/" class="md-nav__link">
+      <a href="../../header-propagation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Adding Permissions for Additional Resources
+    HTTP Header Propagation
   
 
     
@@ -3260,6 +3407,8 @@
       
         
       
+        
+      
     
     
     
@@ -3268,7 +3417,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3290,14 +3439,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3324,6 +3473,34 @@
     
   
     Latest Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/evaluations/model-comparison-summary-20260315/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
   
 
     
@@ -3372,6 +3549,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3380,7 +3563,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3402,14 +3585,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3419,6 +3602,62 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/evaluations/history/results_20260315_041151/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ March 15, 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/evaluations/history/results_20260311_210836/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ March 11, 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -3680,6 +3919,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../development/evaluations/history/frontier_5_models_20260314_204516/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontier 5: Claude, GPT, Gemini, DeepSeek (n=5)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../development/evaluations/history/custom_self_hosted_results_20251008_053744/" class="md-nav__link">
         
   
@@ -3879,7 +4146,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3901,14 +4168,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3978,6 +4245,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3986,10 +4257,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -4007,8 +4278,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4017,6 +4288,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/python-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -4145,6 +4444,34 @@
     
   
     HTTP API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/runbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbooks
   
 
     
@@ -4525,10 +4852,9 @@
 <li>Loki instance with logs from your Kubernetes cluster</li>
 <li>Grafana with Loki datasource configured (recommended) OR direct Loki API access</li>
 </ul>
-<details class="warning">
-<summary>Important: Disable Default Logging Toolset</summary>
-<p>Only one logging toolset should be enabled at a time. If you enable this toolset, disable the default <code>kubernetes/logs</code> toolset.</p>
-<p><strong>Available Log Sources:</strong></p>
+<details class="info">
+<summary>Available Log Sources</summary>
+<p>Multiple logging toolsets can be enabled simultaneously. HolmesGPT will use the most appropriate source for each investigation.</p>
 <ul>
 <li><strong><a href="../kubernetes/">Kubernetes logs</a></strong> - Direct pod log access (enabled by default)</li>
 <li><strong><a href="./">Loki</a></strong> - Centralized logs via Loki</li>
@@ -4536,7 +4862,6 @@
 <li><strong><a href="../coralogix-logs/">Coralogix</a></strong> - Logs via Coralogix platform</li>
 <li><strong><a href="../datadog/">DataDog</a></strong> - Logs from DataDog</li>
 </ul>
-<p>💡 <strong>Choose one</strong>: Only enable one logging toolset at a time for best performance.</p>
 </details>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>Choose one of the following methods:</p>
@@ -4556,13 +4881,13 @@
 <h3 id="configuration-grafana-proxy">Configuration (Grafana Proxy)<a class="headerlink" href="#configuration-grafana-proxy" title="Permanent link">&para;</a></h3>
 <p>
 <div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_2e563477_ad17_497c_962a_1aa47df72739_1" name="__tabbed_2e563477_ad17_497c_962a_1aa47df72739" type="radio">
-<input id="__tabbed_2e563477_ad17_497c_962a_1aa47df72739_2" name="__tabbed_2e563477_ad17_497c_962a_1aa47df72739" type="radio">
-<input id="__tabbed_2e563477_ad17_497c_962a_1aa47df72739_3" name="__tabbed_2e563477_ad17_497c_962a_1aa47df72739" type="radio">
+<input checked="checked" id="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4_1" name="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4" type="radio">
+<input id="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4_2" name="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4" type="radio">
+<input id="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4_3" name="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4" type="radio">
 <div class="tabbed-labels">
-<label for="__tabbed_2e563477_ad17_497c_962a_1aa47df72739_1">Holmes CLI</label>
-<label for="__tabbed_2e563477_ad17_497c_962a_1aa47df72739_2">Holmes Helm Chart</label>
-<label for="__tabbed_2e563477_ad17_497c_962a_1aa47df72739_3">Robusta Helm Chart</label>
+<label for="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4_1">Holmes CLI</label>
+<label for="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4_2">Holmes Helm Chart</label>
+<label for="__tabbed_0efc7120_2405_47e7_a709_41f33016d9d4_3">Robusta Helm Chart</label>
 </div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4573,10 +4898,7 @@
     config:
       api_key: &lt;your grafana API key&gt;
       api_url: https://xxxxxxx.grafana.net # Your Grafana cloud account URL
-      grafana_datasource_uid: &lt;the UID of the loki data source in Grafana&gt;
-
-  kubernetes/logs:
-    enabled: false # HolmesGPT&#x27;s default logging mechanism MUST be disabled</code></pre>
+      grafana_datasource_uid: &lt;the UID of the loki data source in Grafana&gt;</code></pre>
 </div>
 <div class="tabbed-block">
 <p>When using the <strong>standalone Holmes Helm Chart</strong>, update your <code>values.yaml</code>:</p>
@@ -4586,10 +4908,7 @@
     config:
       api_key: &lt;your grafana API key&gt;
       api_url: https://xxxxxxx.grafana.net # Your Grafana cloud account URL
-      grafana_datasource_uid: &lt;the UID of the loki data source in Grafana&gt;
-
-  kubernetes/logs:
-    enabled: false # HolmesGPT&#x27;s default logging mechanism MUST be disabled</code></pre>
+      grafana_datasource_uid: &lt;the UID of the loki data source in Grafana&gt;</code></pre>
 <p>Apply the configuration:</p>
 <pre><code class="language-bash">helm upgrade holmes holmes/holmes --values=values.yaml</code></pre>
 </div>
@@ -4602,10 +4921,7 @@
       config:
         api_key: &lt;your grafana API key&gt;
         api_url: https://xxxxxxx.grafana.net # Your Grafana cloud account URL
-        grafana_datasource_uid: &lt;the UID of the loki data source in Grafana&gt;
-
-    kubernetes/logs:
-      enabled: false # HolmesGPT&#x27;s default logging mechanism MUST be disabled</code></pre>
+        grafana_datasource_uid: &lt;the UID of the loki data source in Grafana&gt;</code></pre>
 <p>Apply the configuration:</p>
 <pre><code class="language-bash">helm upgrade robusta robusta/robusta --values=generated_values.yaml --set clusterName=&lt;YOUR_CLUSTER_NAME&gt;</code></pre>
 </div>
@@ -4616,13 +4932,13 @@
 <h3 id="configuration-direct-connection">Configuration (Direct Connection)<a class="headerlink" href="#configuration-direct-connection" title="Permanent link">&para;</a></h3>
 <p>
 <div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece_1" name="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece" type="radio">
-<input id="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece_2" name="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece" type="radio">
-<input id="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece_3" name="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece" type="radio">
+<input checked="checked" id="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d_1" name="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d" type="radio">
+<input id="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d_2" name="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d" type="radio">
+<input id="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d_3" name="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d" type="radio">
 <div class="tabbed-labels">
-<label for="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece_1">Holmes CLI</label>
-<label for="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece_2">Holmes Helm Chart</label>
-<label for="__tabbed_dcae919f_be50_4e99_8be1_6bdcc97e6ece_3">Robusta Helm Chart</label>
+<label for="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d_1">Holmes CLI</label>
+<label for="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d_2">Holmes Helm Chart</label>
+<label for="__tabbed_365beba1_537d_492a_b22f_e6e737ce6c8d_3">Robusta Helm Chart</label>
 </div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4633,10 +4949,7 @@
     config:
       api_url: http://loki.logging
       additional_headers:
-        X-Scope-OrgID: &quot;&lt;tenant id&gt;&quot; # Set the X-Scope-OrgID if loki multitenancy is enabled
-
-  kubernetes/logs:
-    enabled: false # HolmesGPT&#x27;s default logging mechanism MUST be disabled</code></pre>
+        X-Scope-OrgID: &quot;&lt;tenant id&gt;&quot; # Set the X-Scope-OrgID if loki multitenancy is enabled</code></pre>
 </div>
 <div class="tabbed-block">
 <p>When using the <strong>standalone Holmes Helm Chart</strong>, update your <code>values.yaml</code>:</p>
@@ -4646,10 +4959,7 @@
     config:
       api_url: http://loki.logging
       additional_headers:
-        X-Scope-OrgID: &quot;&lt;tenant id&gt;&quot; # Set the X-Scope-OrgID if loki multitenancy is enabled
-
-  kubernetes/logs:
-    enabled: false # HolmesGPT&#x27;s default logging mechanism MUST be disabled</code></pre>
+        X-Scope-OrgID: &quot;&lt;tenant id&gt;&quot; # Set the X-Scope-OrgID if loki multitenancy is enabled</code></pre>
 <p>Apply the configuration:</p>
 <pre><code class="language-bash">helm upgrade holmes holmes/holmes --values=values.yaml</code></pre>
 </div>
@@ -4662,10 +4972,7 @@
       config:
         api_url: http://loki.logging
         additional_headers:
-          X-Scope-OrgID: &quot;&lt;tenant id&gt;&quot; # Set the X-Scope-OrgID if loki multitenancy is enabled
-
-    kubernetes/logs:
-      enabled: false # HolmesGPT&#x27;s default logging mechanism MUST be disabled</code></pre>
+          X-Scope-OrgID: &quot;&lt;tenant id&gt;&quot; # Set the X-Scope-OrgID if loki multitenancy is enabled</code></pre>
 <p>Apply the configuration:</p>
 <pre><code class="language-bash">helm upgrade robusta robusta/robusta --values=generated_values.yaml --set clusterName=&lt;YOUR_CLUSTER_NAME&gt;</code></pre>
 </div>
@@ -4676,13 +4983,13 @@
 <p>For self-signed certificates, you can disable SSL verification:</p>
 <p>
 <div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1_1" name="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1" type="radio">
-<input id="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1_2" name="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1" type="radio">
-<input id="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1_3" name="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1" type="radio">
+<input checked="checked" id="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37_1" name="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37" type="radio">
+<input id="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37_2" name="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37" type="radio">
+<input id="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37_3" name="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37" type="radio">
 <div class="tabbed-labels">
-<label for="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1_1">Holmes CLI</label>
-<label for="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1_2">Holmes Helm Chart</label>
-<label for="__tabbed_719348ec_4f20_4d64_b6f7_d7d5c8d505c1_3">Robusta Helm Chart</label>
+<label for="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37_1">Holmes CLI</label>
+<label for="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37_2">Holmes Helm Chart</label>
+<label for="__tabbed_c9e00b90_62f8_4d14_ad68_f5c4b02c8e37_3">Robusta Helm Chart</label>
 </div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4723,13 +5030,13 @@
 <p>If HolmesGPT accesses Loki through an internal URL but you want clickable links in results to use a different URL:</p>
 <p>
 <div class="tabbed-set" data-tabs="1:3">
-<input checked="checked" id="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868_1" name="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868" type="radio">
-<input id="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868_2" name="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868" type="radio">
-<input id="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868_3" name="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868" type="radio">
+<input checked="checked" id="__tabbed_598e9089_12fb_49be_820c_727a183443e3_1" name="__tabbed_598e9089_12fb_49be_820c_727a183443e3" type="radio">
+<input id="__tabbed_598e9089_12fb_49be_820c_727a183443e3_2" name="__tabbed_598e9089_12fb_49be_820c_727a183443e3" type="radio">
+<input id="__tabbed_598e9089_12fb_49be_820c_727a183443e3_3" name="__tabbed_598e9089_12fb_49be_820c_727a183443e3" type="radio">
 <div class="tabbed-labels">
-<label for="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868_1">Holmes CLI</label>
-<label for="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868_2">Holmes Helm Chart</label>
-<label for="__tabbed_9bc964fa_b26f_4923_9544_6f474b40d868_3">Robusta Helm Chart</label>
+<label for="__tabbed_598e9089_12fb_49be_820c_727a183443e3_1">Holmes CLI</label>
+<label for="__tabbed_598e9089_12fb_49be_820c_727a183443e3_2">Holmes Helm Chart</label>
+<label for="__tabbed_598e9089_12fb_49be_820c_727a183443e3_3">Robusta Helm Chart</label>
 </div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4798,6 +5105,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -4920,7 +5229,7 @@ For website terms of use, trademark policy and other project policies please see
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

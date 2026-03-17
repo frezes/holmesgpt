@@ -96,30 +96,21 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-              <button class="md-banner__button md-icon" aria-label="Don't show this again">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-              </button>
-            
-            
-<div class="md-banner">
-  <div class="md-banner__inner">
-    📅 <a href="https://docs.google.com/document/d/1q3L2iUd8tNu-NmZ6QIVOJcCLHrile9CC5QguOGTn_tg/edit?tab=t.0#heading=h.ihdnrt5bstrv">Join our next community meetup!</a>
-  </div>
-</div>
-
-          </div>
-          
-            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
-          
-        </aside>
-      
     </div>
     
       <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're viewing docs for a <strong>previous version</strong>.
+  <a href="../..">
+    <strong>Switch to the latest stable release.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
         
       </div>
     
@@ -244,6 +235,45 @@
 </div>
       
     
+    <a href="https://docs.google.com/document/d/1q3L2iUd8tNu-NmZ6QIVOJcCLHrile9CC5QguOGTn_tg/edit?tab=t.0#heading=h.ihdnrt5bstrv" id="meetup-countdown" class="md-header__meetup" title="Community meetup">
+    </a>
+    <script>
+      (function() {
+        // Meetings are every 4 weeks (28 days) on Thursdays
+        // Known dates: Jan 15, Feb 12, Mar 12 2026
+        var ANCHOR = new Date(2026, 2, 12); // Mar 12, 2026 (month is 0-indexed)
+        var CYCLE = 28; // days
+
+        function update() {
+          var now = new Date();
+          var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+          // Calculate days since anchor, find next occurrence
+          var diff = Math.floor((today - ANCHOR) / (1000 * 60 * 60 * 24));
+          var remainder = ((diff % CYCLE) + CYCLE) % CYCLE; // handle dates before anchor too
+          var daysUntil = remainder === 0 ? 0 : CYCLE - remainder;
+
+          var el = document.getElementById("meetup-countdown");
+          if (!el) return;
+
+          var text;
+          if (daysUntil === 0) {
+            text = "Community meetup today!";
+          } else if (daysUntil === 1) {
+            text = "1 day until community meetup";
+          } else {
+            text = daysUntil + " days until community meetup";
+          }
+          el.textContent = text;
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", update);
+        } else {
+          update();
+        }
+      })();
+    </script>
     
       <div class="md-header__source">
         <a href="https://github.com/HolmesGPT/holmesgpt" title="Go to repository" class="md-source" data-md-component="source">
@@ -337,6 +367,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../why-holmesgpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why HolmesGPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -364,10 +421,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -385,8 +442,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -658,7 +715,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -680,14 +737,14 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -849,7 +906,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -871,14 +928,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1084,7 +1141,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1106,14 +1163,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1519,6 +1576,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1527,7 +1588,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1549,14 +1610,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1566,6 +1627,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-sources/recommended-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1667,6 +1756,8 @@
       
         
       
+        
+      
     
     
     
@@ -1675,7 +1766,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1697,14 +1788,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2535,6 +2626,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../data-sources/builtin-toolsets/mongodb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../data-sources/builtin-toolsets/mongodb-atlas/" class="md-nav__link">
         
   
@@ -2935,14 +3054,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-sources/custom-toolsets/" class="md-nav__link">
+      <a href="../data-sources/api-toolsets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Custom Toolsets
+    HTTP Connectors
   
 
     
@@ -2963,14 +3082,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-sources/api-toolsets/" class="md-nav__link">
+      <a href="../data-sources/database-connectors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    HTTP Connectors
+    Database Connectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-sources/custom-toolsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Toolsets
   
 
     
@@ -3019,14 +3166,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-sources/permissions/" class="md-nav__link">
+      <a href="../data-sources/header-propagation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Adding Permissions for Additional Resources
+    HTTP Header Propagation
   
 
     
@@ -3072,6 +3219,8 @@
       
         
       
+        
+      
     
     
     
@@ -3080,7 +3229,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3102,14 +3251,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3136,6 +3285,34 @@
     
   
     Latest Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/evaluations/model-comparison-summary-20260315/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
   
 
     
@@ -3184,6 +3361,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3192,7 +3375,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3214,14 +3397,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3231,6 +3414,62 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/evaluations/history/results_20260315_041151/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ March 15, 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/evaluations/history/results_20260311_210836/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ March 11, 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -3492,6 +3731,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../development/evaluations/history/frontier_5_models_20260314_204516/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontier 5: Claude, GPT, Gemini, DeepSeek (n=5)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../development/evaluations/history/custom_self_hosted_results_20251008_053744/" class="md-nav__link">
         
   
@@ -3691,7 +3958,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -3713,14 +3980,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3790,6 +4057,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3798,10 +4069,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -3819,8 +4090,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3829,6 +4100,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/python-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -3957,6 +4256,34 @@
     
   
     HTTP API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/runbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbooks
   
 
     
@@ -4120,17 +4447,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clean-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Clean Up
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4229,67 +4545,22 @@
 <ul>
 <li>✅ <strong>HolmesGPT CLI installed</strong> - See <a href="../installation/cli-installation/">CLI Installation Guide</a></li>
 <li>✅ <strong>AI provider API key configured</strong> - See <a href="../ai-providers/">AI Provider Setup</a></li>
-<li>✅ <strong>kubectl access to a Kubernetes cluster</strong> - Any cluster will work</li>
 </ul>
 <h2 id="run-your-first-investigation">Run Your First Investigation<a class="headerlink" href="#run-your-first-investigation" title="Permanent link">&para;</a></h2>
-<p>Let's investigate a pod with HolmesGPT to see the value it provides:</p>
-<ol>
-<li>
-<p><strong>Create a test pod with an issue:</strong>
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/robusta-dev/kubernetes-demos/main/pending_pods/pending_pod_node_selector.yaml
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>Ask Holmes to investigate:</strong></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="run-your-first-investigation-openai-default" name="__tabbed_1" type="radio" /><input id="run-your-first-investigation-azure-openai" name="__tabbed_1" type="radio" /><input id="run-your-first-investigation-anthropic-claude" name="__tabbed_1" type="radio" /><input id="run-your-first-investigation-google-gemini" name="__tabbed_1" type="radio" /><input id="run-your-first-investigation-aws-bedrock" name="__tabbed_1" type="radio" /><input id="run-your-first-investigation-ollama" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="run-your-first-investigation-openai-default">OpenAI (Default)</label><label for="run-your-first-investigation-azure-openai">Azure OpenAI</label><label for="run-your-first-investigation-anthropic-claude">Anthropic Claude</label><label for="run-your-first-investigation-google-gemini">Google Gemini</label><label for="run-your-first-investigation-aws-bedrock">AWS Bedrock</label><label for="run-your-first-investigation-ollama">Ollama</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;describe the user-profile-import pod and explain any issues&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;tell me something surprising about my environment&quot;</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;describe the user-profile-import pod and explain any issues&quot;</span><span class="w"> </span>--model<span class="o">=</span><span class="s2">&quot;azure/&lt;your-model-name&gt;&quot;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;describe the user-profile-import pod and explain any issues&quot;</span><span class="w"> </span>--model<span class="o">=</span><span class="s2">&quot;anthropic/&lt;your-model-name&gt;&quot;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;describe the user-profile-import pod and explain any issues&quot;</span><span class="w"> </span>--model<span class="o">=</span><span class="s2">&quot;gemini/&lt;your-model-name&gt;&quot;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;describe the user-profile-import pod and explain any issues&quot;</span><span class="w"> </span>--model<span class="o">=</span><span class="s2">&quot;bedrock/&lt;your-model-name&gt;&quot;</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>holmes<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;describe the user-profile-import pod and explain any issues&quot;</span><span class="w"> </span>--model<span class="o">=</span><span class="s2">&quot;ollama_chat/&lt;your-model-name&gt;&quot;</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p><strong>See the value:</strong></p>
-<p>Holmes will analyze the pod, identify that it's stuck in "Pending" state due to an invalid node selector, and suggest specific remediation steps - all without you needing to manually run <code>kubectl describe</code>, check events, or dig through logs.</p>
-</li>
-</ol>
+<p>Holmes will automatically discover your connected <a href="../data-sources/builtin-toolsets/">data sources</a> — Kubernetes, Prometheus, Datadog, Elasticsearch, AWS, GCP, databases, and more — and report back on what it finds.</p>
 <h2 id="what-you-just-experienced">What You Just Experienced<a class="headerlink" href="#what-you-just-experienced" title="Permanent link">&para;</a></h2>
 <p>HolmesGPT automatically:</p>
 <ul>
-<li>✅ <strong>Gathered context</strong> - Retrieved pod status, events, and related information</li>
-<li>✅ <strong>Identified the root cause</strong> - Invalid node selector preventing scheduling</li>
-<li>✅ <strong>Provided actionable solutions</strong> - Specific commands to fix the issue</li>
+<li>✅ <strong>Gathered context</strong> - Retrieved relevant data from your observability stack</li>
+<li>✅ <strong>Identified the root cause</strong> - Pinpointed the underlying issue</li>
+<li>✅ <strong>Provided actionable solutions</strong> - Specific steps to fix the problem</li>
 <li>✅ <strong>Saved investigation time</strong> - No manual troubleshooting steps required</li>
 </ul>
-<h2 id="clean-up">Clean Up<a class="headerlink" href="#clean-up" title="Permanent link">&para;</a></h2>
-<p>Remove the test pod:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>user-profile-import
-</span></code></pre></div>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../data-sources/">Add integrations</a></strong> - Connect monitoring tools like Prometheus, Grafana, and DataDog</li>
+<li><strong><a href="../data-sources/recommended-setup/">Recommended Setup</a></strong> - Connect metrics, logs, and cloud providers to unlock deeper investigations</li>
 <li><strong><a href="../reference/troubleshooting/">Troubleshooting guide</a></strong> - Common issues and solutions</li>
 <li><strong><a href="https://cloud-native.slack.com/archives/C0A1SPQM5PZ" target="_blank">Join our Slack</a></strong> - Get help from the community</li>
 <li><strong><a href="https://github.com/HolmesGPT/holmesgpt/issues" target="_blank">Request features on GitHub</a></strong> - Suggest improvements or report bugs</li>
@@ -4311,6 +4582,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -4433,7 +4706,7 @@ For website terms of use, trademark policy and other project policies please see
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
